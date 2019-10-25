@@ -10,7 +10,6 @@ fn main() -> std::io::Result<()> {
             // enable logger
             .wrap(middleware::Logger::default())
             .service(
-                // static files
                 fs::Files::new("/", "./wwwroot/").index_file("index.html"),
             )
     })

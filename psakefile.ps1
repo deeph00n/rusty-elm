@@ -2,7 +2,7 @@ task default -depends Build-Frontend, Build-Server, Run
 
 task Build-Frontend {
     Push-Location ".\sandbox-client"
-    elm make "src/Main.elm" --output "../sandbox-server/wwwroot/index.html"
+    elm make "src/Main.elm" --output "../sandbox-server/wwwroot/index.html" --optimize
     if ($lastexitcode -ne 0) { throw "Failed to build frontend" }
     Pop-Location
 }
